@@ -1,9 +1,10 @@
 package games
 
 var Bowling = &Game{
-	Name:            "Bowling",
-	BackgroundColor: Color{0, 0, 64},
-	ForegroundColor: Color{200, 250, 250},
+	Name:                 "Bowling",
+	InstructionsPerCycle: 4,
+	BackgroundColor:      Color{0, 0, 64},
+	ForegroundColor:      Color{200, 250, 250},
 	Program: []byte{
 		0x63, 0x14, 0x64, 0x00, 0x25, 0x5e, 0x60, 0x05,
 		0x25, 0xb4, 0x63, 0x0c, 0x25, 0xbc, 0x69, 0x06,

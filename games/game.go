@@ -2,6 +2,20 @@ package games
 
 import "time"
 
+type Game struct {
+	Name                 string
+	Description          string
+	HowToPlay            string
+	ClockSpeed           time.Duration
+	InstructionsPerCycle int
+	ForegroundColor      Color
+	BackgroundColor      Color
+	StartAddress         uint16
+	Keys                 map[GameKey]uint8
+	Program              []byte
+	ScreenShot           [32]uint64
+}
+
 type Color struct{ R, G, B uint8 }
 
 type GameKey int
@@ -30,22 +44,9 @@ const (
 	KeyE
 	KeyF
 	KeyQ
-	NumberOfGameKeys
-)
 
-type Game struct {
-	Name                 string
-	Description          string
-	HowToPlay            string
-	ClockSpeed           time.Duration
-	InstructionsPerCycle int
-	ForegroundColor      Color
-	BackgroundColor      Color
-	StartAddress         uint16
-	Keys                 map[GameKey]uint8
-	Program              []byte
-	ScreenShot           [32]uint64
-}
+	NumberOfGameKeys // this has to be last in the enumeration
+)
 
 func (g *Game) FillEmptyData() *Game {
 	if g.Name == "" {
@@ -62,6 +63,9 @@ func (g *Game) FillEmptyData() *Game {
 	}
 	if g.ClockSpeed == 0 {
 		g.ClockSpeed = 1 * time.Millisecond
+	}
+	if g.InstructionsPerCycle == 0 {
+		g.InstructionsPerCycle = 1
 	}
 	if g.BackgroundColor == g.ForegroundColor {
 		g.BackgroundColor = Color{0, 0, 0}

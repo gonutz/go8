@@ -23,6 +23,9 @@ func TestEmptyGameCanBeFilledWithDefaultData(t *testing.T) {
 	if g.ClockSpeed != 1*time.Millisecond {
 		t.Error("clock speed", g.ClockSpeed)
 	}
+	if g.InstructionsPerCycle != 1 {
+		t.Error("instructions", g.InstructionsPerCycle)
+	}
 	white := Color{255, 255, 255}
 	if g.ForegroundColor != white {
 		t.Error("foreground color", g.ForegroundColor)

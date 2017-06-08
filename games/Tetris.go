@@ -4,6 +4,15 @@ package games
 
 var Tetris = &Game{
 	Name: "Tetris",
+	Keys: map[GameKey]uint8{
+		Left:  5,
+		Right: 6,
+		Up:    4,
+		Down:  7,
+	},
+	InstructionsPerCycle: 20,
+	BackgroundColor:      Color{128, 50, 0},
+	ForegroundColor:      Color{100, 200, 255},
 	Program: []byte{
 		0xa2, 0xb4, 0x23, 0xe6, 0x22, 0xb6, 0x70, 0x01,
 		0xd0, 0x11, 0x30, 0x25, 0x12, 0x06, 0x71, 0xff,

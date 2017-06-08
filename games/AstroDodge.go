@@ -10,7 +10,7 @@ var AstroDodge = &Game{
 	move with the arrow-keys.
 	Dodge the asteroids to score.`,
 	ClockSpeed:           5 * time.Millisecond,
-	InstructionsPerCycle: 4,
+	InstructionsPerCycle: 15,
 	ForegroundColor:      Color{200, 100, 80},
 	BackgroundColor:      Color{0, 0, 0},
 	Keys: map[GameKey]uint8{

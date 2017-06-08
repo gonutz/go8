@@ -12,7 +12,7 @@ var Blinky = &Game{
 	lose them both restart the game
 	with Space.`,
 	ClockSpeed:           5 * time.Millisecond,
-	InstructionsPerCycle: 10,
+	InstructionsPerCycle: 50,
 	ForegroundColor:      Color{255, 255, 0},
 	BackgroundColor:      Color{0, 0, 0},
 	Keys: map[GameKey]uint8{

@@ -11,9 +11,10 @@ var AdditionProblems = &Game{
 	Example: to enter 12, type 012.
 	If you are right, you get a C else
 	you get E and the right answer.`,
-	ClockSpeed:      1 * time.Millisecond,
-	ForegroundColor: Color{0, 0, 0},
-	BackgroundColor: Color{255, 255, 255},
+	ClockSpeed:           1 * time.Millisecond,
+	InstructionsPerCycle: 100,
+	ForegroundColor:      Color{0, 0, 0},
+	BackgroundColor:      Color{255, 255, 255},
 	Keys: map[GameKey]uint8{
 		Number0: 0,
 		Number1: 1,

@@ -11,7 +11,7 @@ var Blitz = &Game{
 	crash into one of them as your
 	altitude decreases.`,
 	ClockSpeed:           1 * time.Millisecond,
-	InstructionsPerCycle: 10,
+	InstructionsPerCycle: 1000,
 	BackgroundColor:      Color{120, 200, 255},
 	ForegroundColor:      Color{115, 50, 0},
 	Keys: map[GameKey]uint8{

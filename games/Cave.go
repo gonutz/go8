@@ -3,6 +3,16 @@
 package games
 
 var Cave = &Game{
+	Keys: map[GameKey]uint8{
+		Left:  4,
+		Right: 6,
+		Down:  8,
+		Up:    2,
+		Enter: 15,
+	},
+	BackgroundColor:      Color{0, 0, 0},
+	ForegroundColor:      Color{128, 50, 0},
+	InstructionsPerCycle: 9,
 	Program: []byte{
 		0x00, 0xe0, 0x64, 0x00, 0x65, 0x00, 0xa2, 0x0a,
 		0x12, 0x0c, 0xcc, 0x33, 0x66, 0x1e, 0xd4, 0x52,

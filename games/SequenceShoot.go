@@ -3,10 +3,11 @@ package games
 import "time"
 
 var SequenceShoot = &Game{
-	Name:            "Sequence Shoot",
-	ClockSpeed:      1 * time.Millisecond,
-	ForegroundColor: Color{255, 255, 0},
-	BackgroundColor: Color{0, 128, 0},
+	Name:                 "Sequence Shoot",
+	ClockSpeed:           1 * time.Millisecond,
+	InstructionsPerCycle: 25,
+	ForegroundColor:      Color{255, 255, 0},
+	BackgroundColor:      Color{0, 128, 0},
 	Keys: map[GameKey]uint8{
 		Number1: 0xC,
 		Number2: 0xD,
