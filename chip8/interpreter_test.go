@@ -10,10 +10,15 @@ func setUp() {
 	chip8.SetKeyEvent(dummyKeyEvent{})
 }
 
+type dummySpeakers struct{}
+
+func (dummySpeakers) Beep()    {}
+func (dummySpeakers) BeQuiet() {}
+
 type dummyKeyEvent struct{}
 
-func (_ dummyKeyEvent) LastKey() (bool, uint8) { return false, 0 }
-func (_ dummyKeyEvent) ClearLastKey()          {}
+func (dummyKeyEvent) LastKey() (bool, uint8) { return false, 0 }
+func (dummyKeyEvent) ClearLastKey()          {}
 
 func TestAfterCreationAllRegistersAreZero(t *testing.T) {
 	setUp()
@@ -927,7 +932,7 @@ type spyKeyEvent struct {
 	cleared bool
 }
 
-func (_ *spyKeyEvent) LastKey() (hasOne bool, key uint8) { return false, 0 }
+func (*spyKeyEvent) LastKey() (hasOne bool, key uint8) { return false, 0 }
 
 func (e *spyKeyEvent) ClearLastKey() { e.cleared = true }
 
